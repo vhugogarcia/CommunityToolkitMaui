@@ -93,8 +93,7 @@ public class MauiMediaElement : CoordinatorLayout
 			else
 			{
 				originalUiOptions = (int)currentWindow.DecorView.SystemUiVisibility;
-				var newUiOptions = originalUiOptions | (int)SystemUiFlags.LayoutStable | (int)SystemUiFlags.LayoutHideNavigation | (int)SystemUiFlags.LayoutHideNavigation |
-								(int)SystemUiFlags.LayoutFullscreen | (int)SystemUiFlags.HideNavigation | (int)SystemUiFlags.Fullscreen | (int)SystemUiFlags.Immersive;
+				var newUiOptions = (int)SystemUiFlags.Fullscreen;
 
 				currentWindow.DecorView.SystemUiVisibility = (StatusBarVisibility)newUiOptions;
 			}
