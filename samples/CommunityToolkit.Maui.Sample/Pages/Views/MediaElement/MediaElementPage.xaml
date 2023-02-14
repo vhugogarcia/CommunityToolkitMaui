@@ -9,6 +9,7 @@
              x:DataType="viewModels:MediaElementViewModel"
              x:Class="CommunityToolkit.Maui.Sample.Pages.Views.MediaElementPage"
              Padding="0"
+             Shell.NavBarIsVisible="False"
              Title="MediaElement"
              Unloaded="BasePage_Unloaded">
     <pages:BasePage.Resources>
@@ -16,17 +17,13 @@
         <converters:SecondsToStringConverter x:Key="SecondsToStringConverter" />
     </pages:BasePage.Resources>
     <VerticalStackLayout>
-        <Grid ColumnSpacing="0" RowSpacing="0">
+        <Grid ColumnSpacing="0" RowSpacing="0" BackgroundColor="Black">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="480"/>
-
             </Grid.RowDefinitions>
-            <!--  Aspect Ratios for videos  -->
-            <!--  Cinematic 2.35 3840x1634 for Tablets -->
-            <!--  HD 1.78(16:9) 3840x2160 9/16 = 0.5625 for Phones -->
             <toolkit:MediaElement
                 x:Name="mediaElement"
                 ShouldAutoPlay="True"
@@ -39,7 +36,7 @@
                 PositionChanged="OnPositionChanged"
                 StateChanged="OnStateChanged"
                 SeekCompleted="OnSeekCompleted"/>
-    </Grid>
+        </Grid>
         <ScrollView Padding="12">
             <VerticalStackLayout>
                 <Grid>

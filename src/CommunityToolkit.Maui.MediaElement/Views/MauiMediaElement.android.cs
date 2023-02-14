@@ -76,7 +76,6 @@ public class MauiMediaElement : CoordinatorLayout
 			return;
 		}
 
-		
 		if (e.IsFullScreen)
 		{
 			// Get the original values
@@ -89,7 +88,7 @@ public class MauiMediaElement : CoordinatorLayout
 			if (Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.R)
 			{
 				currentWindow.SetDecorFitsSystemWindows(false);
-				currentWindow.InsetsController?.Hide(WindowInsets.Type.NavigationBars());
+				currentWindow.InsetsController?.Hide(WindowInsets.Type.SystemBars());
 			}
 			else
 			{
@@ -121,7 +120,7 @@ public class MauiMediaElement : CoordinatorLayout
 			if (Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.R)
 			{
 				currentWindow.SetDecorFitsSystemWindows(false);
-				currentWindow.InsetsController?.Show(WindowInsets.Type.NavigationBars());
+				currentWindow.InsetsController?.Show(WindowInsets.Type.SystemBars());
 			}
 			else
 			{
